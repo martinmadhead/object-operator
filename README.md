@@ -1,8 +1,6 @@
 # @martin.kwan/object-operator
 
-[![npm (scoped)]
-(https://img.shields.io/npm/v/@martin.kwan/object-operator)]
-(https://github.com/martinmadhead/object-operator)
+[![npm (scoped)](https://img.shields.io/npm/v/@martin.kwan/object-operator.svg)](https://github.com/martinmadhead/object-operator)
 
 This is a package for doing operators for objects.
 
