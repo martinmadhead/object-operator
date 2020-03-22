@@ -42,9 +42,9 @@ export function objectMinus(obj1: any, obj2: any, ignoreKeys: string[] = []) {
     return newObject;
 }
 
-module.exports = (obj1: any, obj2: any, operator: Operator, ignoreKeys: string[] = []) => {
-    switch(operator) {
-        case '+': return objectAdd(obj1, obj2, ignoreKeys);
-        case '-': return objectMinus(obj1, obj2, ignoreKeys);
-    }
-}
+// module.exports = (obj1: any, obj2: any, operator: Operator, ignoreKeys: string[] = []) => {
+//     switch(operator) {
+//         case '+': return objectAdd(obj1, obj2, ignoreKeys);
+//         case '-': return objectMinus(obj1, obj2, ignoreKeys);
+//     }
+// }
