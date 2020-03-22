@@ -11,6 +11,10 @@
   },
   "author": "Martin",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/martinmadhead/object-operator"
+  },
   "dependencies": {
     "@types/node": "^13.9.2"
   },
