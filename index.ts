@@ -3,8 +3,7 @@ export type Operator = '+' | '-';
 export function objectAdd(obj1: any, obj2: any, ignoreKeys: string[] = []) {
     const newObject: any = JSON.parse(JSON.stringify(obj1));
     for (const key of Object.keys(obj2)) {
-        const myKey = ignoreKeys.find(ignoreKey => ignoreKey === key);
-        if (myKey) {
+        if (!(key in obj1)) {
             continue;
         }
 
@@ -14,7 +13,7 @@ export function objectAdd(obj1: any, obj2: any, ignoreKeys: string[] = []) {
             switch(typeof obj1[key]) {
                 case 'number': newObject[key] = obj1[key] + obj2[key]; break;
                 case 'string': newObject[key] = obj1[key] + obj2[key]; break;
-                default:
+                default: break;
             }
         }
     }
@@ -24,18 +23,17 @@ export function objectAdd(obj1: any, obj2: any, ignoreKeys: string[] = []) {
 export function objectMinus(obj1: any, obj2: any, ignoreKeys: string[] = []) {
     const newObject: any = JSON.parse(JSON.stringify(obj1));
     for (const key of Object.keys(obj2)) {
-        const myKey = ignoreKeys.find(ignoreKey => ignoreKey === key);
-        if (myKey) {
+        if (!(key in obj1)) {
             continue;
         }
 
         if (typeof obj1[key] === 'object' && typeof obj2[key] === 'object') {
-            objectMinus(obj1[key], obj2[key]);
+            newObject[key] = objectMinus(obj1[key], obj2[key]);
         } else {
             switch(typeof obj1[key]) {
                 case 'number': newObject[key] = obj1[key] - obj2[key]; break;
                 case 'string': newObject[key] = obj1[key].replace(obj2[key], ''); break;
-                default:
+                default: break;
             }
         }
     }
